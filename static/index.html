@@ -2,19 +2,15 @@
 <head>
     <meta charset="UTF-8" />
     <title>API Exercise</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
     <style type="text/css">
         body { color: white; }
     </style>
 </head>
 <body>
-<div id="root"></div>
 <script type="text/jsx">
     const url =
         'https://api.bestbuy.com/v1/products(search=oven&search=stainless&search=steel)?format=json&show=all&apiKey=mPlbr5GXMVkagVgzwT7T2V5X';
-    class ProductsList extends React.Component {
+    /*class ProductsList extends React.Component {
         render () {
             return 'test';
         }
@@ -22,7 +18,9 @@
     ReactDOM.render(
         <ProductsList />,
         document.getElementById('root')
-    );
+    );*/
 </script>
+<div id="root"></div>
+<script src="build/bundle.js"></script>
 </body>
 </html>

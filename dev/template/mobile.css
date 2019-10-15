@@ -1,0 +1,7 @@
+@media (max-width: 800px) {
+  .Card {
+    grid-template-areas: "i" "title" "desc" "price";
+  }
+}
+
+/*# sourceMappingURL=mobile.css.map */

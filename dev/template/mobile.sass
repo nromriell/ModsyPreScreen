@@ -1,0 +1,21 @@
+@media only screen and (max-width: 800px)
+  .ProductsList
+    grid-template-columns: 100%
+  .Card
+    padding: 1rem
+    margin: 0
+    grid-template-columns: 1fr
+    grid-template-rows: 40vw auto auto auto
+    grid-template-areas: 'i' 'title' 'desc' 'price'
+    grid-row-gap: 1rem
+  .CardImage
+    background-position: center
+    background-color: darken($detail-color, 10%)
+    background-size: auto 90%
+  .CardTitle
+    font-size: .9rem
+    border-bottom: .05rem solid $seperator-color
+  .CardDescription
+    font-size: .7rem
+  .CardPrice
+    font-size: .8rem
