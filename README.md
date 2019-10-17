@@ -39,7 +39,10 @@ Render only component for displaying a product row
 
  ----
 ##### ProductsList
-ProductCard Parent utilizing generic InfiniteScrol
+ProductCard Parent utilizing generic InfiniteScroll
+
+##### Status
+Fragment wrapped component that displays server error or loading messages based on the state of the remote load
 
 ### Redux
 
