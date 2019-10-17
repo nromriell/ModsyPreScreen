@@ -1,7 +1,15 @@
 const webpack = require('webpack');
 
+/**
+ * @author
+ * Nathan Romriell - 10/15/2019
+ *
+ * @info
+ * Webpack Configuration File
+ *
+ */
 const config = {
-  entry: __dirname + '/index.jsx',
+  entry: ['babel-polyfill', __dirname + '/App.jsx'],
     output: {
       path: __dirname + '/build',
         filename: 'bundle.js'
@@ -14,7 +22,15 @@ const config = {
           {
               test: /\.jsx?/,
               exclude: /node_modules/,
-              use: 'babel-loader'
+              use: ['babel-loader']
+          },
+          {
+              test: /\.css$/i,
+              use: ['style-loader','css-loader']
+          },
+          {
+              test: /\.(png|svg|jpg|gif)$/,
+              use: ['file-loader']
           }
       ]
     }

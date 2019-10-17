@@ -1,0 +1,147 @@
+/**
+ * * @author
+ * * Nathan Romriell - 10/16/2019
+ * *
+ * * @info
+ * * Central Sass Theme File
+ * *
+ * * @imports
+ * * _config
+ * * utilities
+ * * mobile
+ * *
+ * */
+/**
+ * * @author
+ * * Nathan Romriell - 10/16/2019
+ * *
+ * * @info
+ * * Sass Config File for centralized theme settings and font data loads
+ * *
+ * */
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+/**
+ * * @author
+ * * Nathan Romriell - 10/16/2019
+ * *
+ * * @info
+ * * Sass File for Helpers Containing Mixers and Functions
+ * *
+ * */
+body {
+  background-color: #ffffff;
+  font-family: "Roboto", "sans-serif";
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+}
+
+.ProductsList {
+  display: grid;
+  grid-template-columns: 80%;
+  align-items: start;
+  justify-content: center;
+}
+
+.Card {
+  padding: 2rem;
+  margin: 0;
+  background-color: #ffffff;
+  display: grid;
+  box-sizing: border-box;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  grid-template-columns: 20vw 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: minmax(5vw, auto) minmax(5vw, auto);
+  grid-template-areas: "i title title title title price" "i desc desc desc desc price" "i desc desc desc desc price";
+  transition: box-shadow 0.1s;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.Card:hover {
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  background-color: #f2f2f2;
+}
+
+.CardImage {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top left;
+  grid-area: i;
+}
+
+.CardTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+  grid-area: title;
+}
+
+.CardDescription {
+  font-size: 1rem;
+  color: #000000;
+  grid-area: desc;
+}
+
+.CardPrice {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333333;
+  grid-area: price;
+}
+
+/**
+ * * @author
+ * * Nathan Romriell - 10/16/2019
+ * *
+ * * @info
+ * * Sass File for handling responsive web design for mobile devices, changes row template to a vertical card view
+ * *
+ * */
+@media only screen and (max-width: 800px) {
+  .ProductsList {
+    grid-template-columns: 100%;
+  }
+
+  .Card {
+    padding: 1rem;
+    margin: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40vw auto auto auto;
+    grid-template-areas: "i" "title" "desc" "price";
+    grid-row-gap: 1rem;
+  }
+
+  .CardImage {
+    background-position: center;
+    background-color: #e6e6e6;
+    background-size: auto 90%;
+  }
+
+  .CardTitle {
+    font-size: 0.9rem;
+    border-bottom: 0.05rem solid rgba(0, 0, 0, 0.3);
+  }
+
+  .CardDescription {
+    font-size: 0.7rem;
+  }
+
+  .CardPrice {
+    font-size: 0.8rem;
+  }
+}
+
+/*# sourceMappingURL=theme.css.map */

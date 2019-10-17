@@ -1,0 +1,29 @@
+/**
+ * @author
+ * Nathan Romriell - 10/16/2019
+ *
+ * @info
+ * Sass File for Helpers Containing Mixers and Functions
+ *
+ */
+
+//Auto set text color based on the passed in background color
+@function set-text-color($color)
+  @if(lightness($color) > 50)
+    @return $text-dark
+  @else
+    @return $text-light
+
+
+//Auto set detail text color based on the passed in background color
+@function set-detail-text-color($color)
+  @if(lightness($color) > 50)
+    @return $text-detail-dark
+  @else
+    @return $text-detail-light
+
+//Mixer for set div active with &:hover
+@mixin mix-active($color)
+  box-shadow: 0 0 .5rem rgba(0,0,0,0.5)
+  background-color: darken($color, 5%)
+

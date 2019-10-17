@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OnAppInit Tests Renders Correctly 1`] = `
+<a
+  className="Card"
+>
+  <div
+    className="CardImage"
+    style={
+      Object {
+        "backgroundImage": "url()",
+      }
+    }
+  />
+  <div
+    className="CardTitle"
+  />
+  <div
+    className="CardPrice"
+  />
+  <div
+    className="CardDescription"
+  />
+</a>
+`;

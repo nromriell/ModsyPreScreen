@@ -1,0 +1,83 @@
+/**
+ * @author
+ * Nathan Romriell - 10/16/2019
+ *
+ * @info
+ * Central Sass Theme File
+ *
+ * @imports
+ * _config
+ * utilities
+ * mobile
+ *
+ */
+
+@import _config
+@import utilities
+
+body
+  background-color: $detail-color
+  font-family: 'Roboto', 'sans-serif'
+
+a
+  text-decoration: none
+
+#root
+  width: 100%
+  height: 100%
+
+.App
+  width: 100%
+  height: 100%
+
+.ProductsList
+  display: grid
+  grid-template-columns: 80%
+  align-items: start
+  justify-content: center
+
+
+.Card
+  padding: 2rem
+  margin: 0
+  background-color: $detail-color
+  display: grid
+  box-sizing: border-box
+  grid-column-gap: 2rem
+  grid-row-gap: 2rem
+  grid-template-columns: 20vw 1fr 1fr 1fr 1fr 1fr
+  grid-template-rows: minmax(5vw, auto) minmax(5vw, auto)
+  grid-template-areas: 'i title title title title price' 'i desc desc desc desc price' 'i desc desc desc desc price'
+  transition: box-shadow 0.1s
+  border-bottom: .1rem solid $seperator-color
+  cursor: pointer
+  &:hover
+    @include mix-active($detail-color)
+
+.CardImage
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: top left
+  grid-area: i
+
+.CardTitle
+  font-size: 2rem
+  font-weight: bold
+  color: set-text-color($detail-color)
+  grid-area: title
+
+.CardDescription
+  font-size: 1rem
+  color: set-text-color($detail-color)
+  grid-area: desc
+
+.CardPrice
+  font-size: 1.8rem
+  font-weight: bold
+  text-align: center
+  color: set-detail-text-color($detail-color)
+  grid-area: price
+
+@import mobile
+
+
