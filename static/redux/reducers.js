@@ -17,9 +17,7 @@ import {ACTION_GET_PRODUCTS, ACTION_RECEIVED_PRODUCTS, ACTION_SET_SCROLL_TARGET}
 export const ProductInfoBaseState = {loading: false, error:false, products:[]};
 
 export const ProductInfoReducer = (state = ProductInfoBaseState, action) => {
-    console.log("Inside Reducer");
   if(action.type === ACTION_GET_PRODUCTS){
-      console.log("Changing State GET");
       return {...state, loading:true};
   }else if(action.type === ACTION_RECEIVED_PRODUCTS){
       return {loading:false, error:action.payload.error, products: [...state.products, ...action.payload.data]};
