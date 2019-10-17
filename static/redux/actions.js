@@ -49,7 +49,7 @@ export const ACTION_SET_SCROLL_TARGET = "ACTION_SET_SCROLL_TARGET";
  * @returns {string|boolean|number|*}
  */
 const correctType = (obj, expectedType, defaultValue) => {
-  if(!obj || typeof obj !== 'undefined'){
+  if(!obj || typeof obj == 'undefined'){
       return defaultValue;
   }
   if(typeof obj !== expectedType){
@@ -63,7 +63,7 @@ const correctType = (obj, expectedType, defaultValue) => {
                   return defaultValue;
               }
           case "boolean":
-              return Boolean(ob);
+              return Boolean(obj);
           case "string":
               return obj.toString();
           default:

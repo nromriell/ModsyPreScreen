@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start_windows": "npm install && npm run-script build && cd ../server && run.cmd",
-    "start_unix": "npm install && npm run-script build && cd ../server && run.cmd",
+    "start_unix": "npm install && npm run-script build && cd ../server && ./run.bash",
     "build": "webpack -p --progress --config webpack.config.js",
     "dev": "webpack --progress -d --config webpack.config.js",
     "test": "jest --config ./jest.config.json"
