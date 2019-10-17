@@ -34,7 +34,7 @@ import {connect} from 'react-redux'
 const InfiniteScroll = (props) => {
   const [maxPage, setMaxPage] = useState(1);
   const onScroll = () => {
-    if(Math.ceil(document.body.scrollTop+document.body.clientHeight) >= props.target){ //Math.ceil used to prevent floating point errors from blocking page load
+    if(Math.ceil(document.body.scrollTop+document.body.clientHeight)+5 >= props.target){ //Math.ceil used to prevent floating point errors from blocking page load
       if(!props.data.loading) {
         setMaxPage(maxPage + 1);
         props.changeTarget(props.target + window.innerHeight / 2);

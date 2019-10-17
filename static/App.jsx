@@ -7,6 +7,7 @@ import ProductsList from "./components/ProductsList";
 import OnAppInit from "./components/OnAppInit";
 import {applyMiddleware, combineReducers, createStore} from "redux";
 import {PagingTargetReducer, ProductInfoReducer} from "./redux/reducers";
+import Status from "./components/Status";
 
 
 /**
@@ -28,6 +29,7 @@ const App = () => {
             <OnAppInit/>
             <div className="App">
                 <ProductsList/>
+                <Status/>
             </div>
         </Provider>
     );

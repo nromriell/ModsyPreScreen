@@ -47,6 +47,26 @@ a {
   height: 100%;
 }
 
+.Loading {
+  width: 100%;
+  height: 10vh;
+  font-size: 5vh;
+  line-height: 10vh;
+  text-align: center;
+  background-color: #4f5eff;
+  color: #ffffff;
+}
+
+.Error {
+  width: 100%;
+  height: 10vh;
+  font-size: 5vh;
+  line-height: 10vh;
+  text-align: center;
+  background-color: #ff4a4a;
+  color: #ffffff;
+}
+
 .ProductsList {
   display: grid;
   grid-template-columns: 80%;

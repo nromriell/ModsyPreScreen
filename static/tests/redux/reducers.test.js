@@ -20,18 +20,18 @@ for(let i = 0; i < 1; i++){
 
 const reducerActions = {
     startDataLoad: {type:ACTION_GET_PRODUCTS},
-    finishDataLoad: {type:ACTION_RECEIVED_PRODUCTS, payload: mapGetProductResponse({products:fakeData})},
+    finishDataLoad: {type:ACTION_RECEIVED_PRODUCTS, payload:{error:false, data:mapGetProductResponse({products:fakeData})}},
     changeTarget: {type: ACTION_SET_SCROLL_TARGET, payload: 12345}
 };
 
 describe('Redux Reducer: ProductInfoReducer', () => {
-    it('Should Start Loading', () => {
+    it('Should Start Status', () => {
         const newState = ProductInfoReducer(ProductInfoBaseState, reducerActions.startDataLoad);
         expect(newState).toEqual({...ProductInfoBaseState, loading:true});
     });
     it('Should Modify Loaded Data', () => {
         const newState = ProductInfoReducer({...ProductInfoBaseState, loading:true}, reducerActions.finishDataLoad);
-        expect(newState).toEqual({products:reducerActions.finishDataLoad.payload, loading:false});
+        expect(newState).toEqual({loading:false, error: false, products:reducerActions.finishDataLoad.payload.data});
     });
     it('Should Ignore Change Page Load Target', () => {
         const newState = ProductInfoReducer(ProductInfoBaseState, reducerActions.changeTarget);

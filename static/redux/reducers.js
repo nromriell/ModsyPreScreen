@@ -14,7 +14,7 @@ import {ACTION_GET_PRODUCTS, ACTION_RECEIVED_PRODUCTS, ACTION_SET_SCROLL_TARGET}
  *
  */
 
-export const ProductInfoBaseState = {loading: false, products:[]};
+export const ProductInfoBaseState = {loading: false, error:false, products:[]};
 
 export const ProductInfoReducer = (state = ProductInfoBaseState, action) => {
     console.log("Inside Reducer");
@@ -22,7 +22,7 @@ export const ProductInfoReducer = (state = ProductInfoBaseState, action) => {
       console.log("Changing State GET");
       return {...state, loading:true};
   }else if(action.type === ACTION_RECEIVED_PRODUCTS){
-      return {loading:false, products: [...state.products, ...action.payload]};
+      return {loading:false, error:action.payload.error, products: [...state.products, ...action.payload.data]};
   }
   return state;
 };

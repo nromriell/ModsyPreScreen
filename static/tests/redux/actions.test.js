@@ -154,13 +154,13 @@ describe('Redux Action: action_get_remote_products', () => {
     });
 
     it('Should Fetch Remote Data', async (done) => {
-        const store = mockStore({data:{loading: false, products:[]}, scrollTarget: 100});
+        const store = mockStore({data:{loading: false, error: false, products:[]}, scrollTarget: 100});
        const response = { products: fakeDataCorrect};
        const page = 1;
        mock.onAny().reply(200, response);
         const expectedActions = [
             {type: ACTION_GET_PRODUCTS},
-            {type: ACTION_RECEIVED_PRODUCTS, payload: mapGetProductResponse(response)}
+            {type: ACTION_RECEIVED_PRODUCTS, payload: {error: false, data: mapGetProductResponse(response)}}
         ];
         await store.dispatch(action_get_remote_products(page)).then(() => {
             expect(store.getActions()).toEqual(expectedActions);

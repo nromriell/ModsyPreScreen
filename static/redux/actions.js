@@ -113,8 +113,9 @@ export const action_get_remote_products = (page) => async dispatch =>
     try {
         const res = await axios.get(`${API}/products(search=oven&search=stainless&search=steel)?apiKey=${BEST_BUY_API_KEY}&show=sku,name,salePrice,onSale,regularPrice,shortDescription,url,images&page=${page}&format=json`);
         const products = mapGetProductResponse(res.data);
-        dispatch({type:ACTION_RECEIVED_PRODUCTS, payload:products});
+        dispatch({type:ACTION_RECEIVED_PRODUCTS, payload:{error:false, data:products}});
     }catch(error){
+        dispatch({type:ACTION_RECEIVED_PRODUCTS, payload:{error:true, data:[]}});
         console.log("Error Getting Remote Products:"+error);
     }
 };
